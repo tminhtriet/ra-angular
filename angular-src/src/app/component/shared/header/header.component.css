@@ -1,0 +1,17 @@
+.navbar-title-header{
+    font-size: 14px;
+    margin-left: 70px;
+    position: absolute;
+}
+.navbar-title-header li{
+    margin-top: 17px;
+    float: left;
+    font-weight: normal;
+    list-style: none;
+    background: none;
+    padding-right: 10px;
+    border: 0px;
+}
+.navbar-title-header li i{
+    padding-left: 10px;
+}

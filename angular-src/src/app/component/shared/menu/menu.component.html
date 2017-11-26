@@ -1,0 +1,325 @@
+<style>
+	.nav-third-level > li.active{
+		border-left: inherit;
+	}
+	.my-nav-header a {
+        color: #7c7c7c;
+    }
+    
+    .my-nav-header a:hover {
+        color: #7c7c7c;
+    }
+    
+    .my-nav-header{
+    	padding: 20px 10px;
+    }
+    
+    .logo-element{
+    	padding: 0px 0;
+    }
+    
+    .nav>li>a:focus{
+    	outline: none;
+    }
+    
+    .profile-element{
+    	text-align: center;
+    	color: white;
+    	font-size: 18px;
+    	font-weight: 700;
+    }
+    
+    #circle
+	{
+		 width:72px;
+		 height:72px;
+		 border-radius:36px;
+		 background:#fff;
+		 line-height:72px;
+		 text-align:center;
+		 vertical-align:middle;
+		 font-weight:bold;
+		 font-size:24px;
+		 color: black;
+		 margin: auto;
+		 margin-top: 20px;
+	}
+	#circlesmall
+	{
+		width:48px;
+	 	height:48px;
+	 	border-radius:24px;
+	 	background:#fff;
+	 	line-height:48px;
+	 	text-align:center;
+	 	vertical-align:middle;
+	 	font-weight:bold;
+	 	font-size:18px;
+	 	color: black;
+	 	margin: auto;
+	 	margin-top: 20px;
+	}
+	
+	.navbar-default{
+		background-color: #225487; 
+	}
+	@media screen and (max-width:767px)
+	{
+		.iconmenu{display: none;}
+		#circlesmall,  #circle{margin-top: 0px;}
+	}
+</style>
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul class="nav" id="side-menu">
+			<li class="my-nav-header">
+                <div class="profile-element">
+                	<!-- <div class="clear iconmenu" style="text-align: left;">
+                        <a class="navbar-minimalize minimalize-styl-large btn btn-white" ><i class="fa fa-bars"></i> </a>
+                    </div> -->
+                    
+                 	<span>
+                 		<div id="circle">
+                    		2J
+                    	</div>
+                    </span>
+                </div>
+                <div class="logo-element">
+                	<!-- <div class="clear iconmenu">
+                        <a class="navbar-minimalize minimalize-styl-small btn btn-white" ><i class="fa fa-bars"></i> </a>
+                    </div> -->
+                    
+                    <span>      
+                    <div id="circlesmall">
+                   	 	2J
+                   	 </div>
+                    </span>
+                </div>
+            </li>
+            <li id="dashboard" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+             	<a class="mycustom" [routerLink]="['/secure/dashboard']">
+             		<i class="fa fa-home"></i><span class="nav-label text-uppercase text-nowrap ">Dashboard</span>
+             	</a>
+			</li>
+			
+			<li id="sales">
+				<a class="mycustom" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<i class="fa fa-files-o"></i><span class="nav-label text-uppercase text-nowrap text-nowrap">Sales</span><span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+				
+					<li id="sales_ticket_search">
+			           	<a class="text-nowrap" [routerLink]="['/secure/list-sales']">
+			           		<i class="fa fa-search"></i>Tickets list
+			           	</a>
+			        </li>
+			       
+			        <li id="sales_ticket_capture">
+			           	<a href="#">
+			           		<i class="fa fa-ticket"></i>Tickets capture
+			           	</a>
+			        </li>
+
+
+			        <li id="sales_refund_list">
+			           	<a href="#">
+			           		<i class="fa fa-search"></i>Refunds list
+			           	</a>
+			        </li>
+			        
+			        <li id="sales_refund_modif">
+			           	<a class="text-nowrap" href="#">
+			           		<i class="fa fa-ticket"></i>Refunds capture
+			           	</a>
+			        </li>
+			    </ul>
+            </li>
+			
+			<li id="flown">
+				<a href="#" class="mycustom">
+					<i class="fa fa-plane"></i><span class="nav-label text-uppercase text-nowrap">Flown</span><span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li id="flown_envelopes">
+			           	<a href="#">
+			           		<i class="fa fa-plane"></i>Envelopes
+			           	</a>
+					</li>
+
+					<li id="flown_captureenv">
+						<a href="#" class="text-nowrap">
+							<i class="fa fa-plane"></i>Envelopes capture
+						</a>
+					</li>
+				</ul>
+			</li>
+			
+
+
+			<li id="earve" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+				<a href="#" class="mycustom">
+					<i class="fa fa-line-chart"></i><span class="nav-label text-uppercase text-nowrap">Reports</span><span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li id="earev_dashboard" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+						<a href="#" class="text-nowrap" [routerLink]="['/secure/reports/dashboard']">
+							<i class="fa fa-area-chart"></i>Turnover of month
+						</a>
+					</li>
+					<li id="earev_report">
+						<a href="#" class="text-nowrap">
+							<i class="fa fa-tags"></i>Flown revenue
+						</a>
+					</li>
+					<li id="earev_detail">
+						<a href="#" class="text-nowrap">
+							<i class="fa fa-tags"></i>Flown tax
+						</a>
+					</li>
+					<li id="earev_nonsolde">
+						<a href="#" class="text-nowrap">
+							<i class="fa fa-tags"></i>Balance coupon not used
+						</a>
+					</li>
+					<li id="reports">
+						<a href="#">
+							<i class="fa fa-bar-chart-o"></i>Other reports
+						</a>
+					</li>
+				</ul>
+			</li>
+			
+			<li id="interline">
+				<a href="#" class="mycustom">
+					<i class="fa fa-road"></i><span class="nav-label text-uppercase text-nowrap">Interline</span><span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level collapse">
+					<li id="interline_dashboard">
+						<a href="#" class="text-nowrap">
+	                     	<i class="fa fa-th-large"></i>Interline Dashboard
+	                    </a>
+					</li>
+
+					<li id="interline_processOA">
+						<a href="#" class="text-nowrap">
+	                     	<i class="fa fa-search"></i>Process OA
+	                    </a>
+					</li>
+
+					<li id="interline_firstBilling">
+						<a href="#" class="text-nowrap">
+	                     	<i class="fa fa-user-secret"></i>First billing
+	                    </a>
+					</li>
+
+					<li id="interline_debitMemos">
+						<a href="#">
+		             		<i class="fa fa-ticket"></i><span class="text-nowrap">Debit memos</span><span class="fa arrow"></span>
+		             	</a>
+						<ul class="nav nav-third-level">
+						
+							<li id="interline_debitMemos_list">
+								<a href="#" class="text-nowrap">
+									<i class="fa fa-user-secret"></i>List reject memo
+								</a>
+							</li>
+
+							<li id="interline_debitMemos_create">
+								<a href="#" class="text-nowrap">
+									<i class="fa fa-user-secret"></i>Create reject memo
+								</a>
+							</li>
+						</ul>
+					</li>
+				
+					<li id="interline_rejectionMemos">
+						<a href="#">
+	                     	<i class="fa fa-road"></i><span class="text-nowrap">Rejection memos</span><span class="fa arrow"></span>
+                     	</a>
+                     	<ul class="nav nav-third-level">
+                     		<li id="interline_rejectionMemosR_list">
+                     			<a href="#" class="text-nowrap">
+                     				<i class="fa fa-road"></i>List reject memo R
+                     			</a>
+                     		</li>
+
+                     		<li id="interline_rejectionMemosR_create">
+                     			<a href="#" class="text-nowrap">
+                     				<i class="fa fa-road"></i>Create summary
+                     			</a>
+                     		</li>
+                     	</ul>
+					</li>
+				
+					<li id="interline_rejectionMemosOrgi">
+						<a href="#" class="text-nowrap">
+	                     	<i class="fa fa-fighter-jet"></i>Rejection memos (original)
+                     	</a>
+					</li>
+
+					<li id="interline_billingMemos">
+						<a href='#' class="text-nowrap">
+							<i class="fa fa-money"></i>Billing memos
+						</a>
+					</li>
+
+					<li id="interline_dataLoading">
+						<a href='#' class="text-nowrap">
+							<i class="fa fa-money"></i>SIS data loading
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			<li id="search">
+			    <a href="#" class="mycustom">
+					<i class="fa fa-search"></i><span class="nav-label text-uppercase text-nowrap">Search</span>
+				</a>
+			</li>
+			
+			<li id="setting">
+				<a href="#" class="mycustom">
+					<i class="fa fa-cogs"></i><span class="nav-label text-uppercase text-nowrap">Settings</span><span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li id="setting_airportTaxes">
+						<a href="#" class="text-nowrap">
+		                   	<i class="fa fa-cog"></i>Airport taxes
+		                </a>
+					</li>
+
+					<li id="setting_bsr">
+						<a href="#">
+		                   	<i class="fa fa-cog"></i>BSR
+		                </a>
+					</li>
+
+			    	<li id="setting_ich">
+						<a href="#">
+		                   	<i class="fa fa-cog"></i>ICH
+		                </a>
+					</li>
+
+					<li id="setting_line">
+						<a href="#">
+		                   	<i class="fa fa-cog"></i>Line
+		                </a>
+					</li>
+
+					<li id="setting_factor">
+						<a href="#">
+		                   	<i class="fa fa-cog"></i>Factors
+		                </a>
+			    	</li>
+
+				</ul>
+            </li>
+			<li id="search">
+				<a href="#" class="mycustom">
+					<i class="fa fa-exchange"></i><span class="nav-label text-uppercase text-nowrap">Search invoice</span>
+				</a>
+			</li>
+         </ul>
+	</div>
+</nav>

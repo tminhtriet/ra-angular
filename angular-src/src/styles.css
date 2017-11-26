@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+.mCSB_inside > .mCSB_container{
+    margin-right: 15px;
+}
+.mCSB_scrollTools{
+    width: 15px;
+}
+.mCSB_scrollTools .mCSB_draggerContainer{
+    background-color: white;
+}
+.mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_buttonDown{
+    opacity: inherit;
+    background-color: white;
+}
+.mCSB_horizontal.mCSB_inside > .mCSB_container{
+    margin-bottom: 15px;
+}
+#toast-container > .toast-info::before, #toast-container > .toast-error::before, #toast-container > .toast-success::before{
+ content: none;
+}
+#small-chat{
+ bottom: 96px;
+}
+
+.tooltip-demo a:focus, .tooltip-demo span a:focus, .actionBoder{  
+   outline: none; 
+  color: #F44336;  
+}
+.my-col{
+   padding-left: 0px;
+   padding-right: 0px;
+}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td{	
+ border: 1px solid #cecaca;
+}
+.footable.breakpoint > tbody > tr > td > span.footable-toggle{
+ font-size: 17px;
+ color: #9C27B0;
+}
