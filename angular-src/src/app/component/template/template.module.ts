@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+import { ChartsModule } from 'ng2-charts';
 
 import { InitUtilsService } from '../service/init-utils.service';
 
@@ -19,7 +20,8 @@ import { ListSalesComponent } from './body/sales/list-sales/list-sales.component
         FormsModule,
         HttpModule,
         CommonModule,
-        RouterModule
+        RouterModule,
+        ChartsModule
     ],
     declarations: [
         TemplateComponent, 
