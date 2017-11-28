@@ -1,9 +1,29 @@
 <div id="wrapper">
   <ra-menu></ra-menu>
-  <div id="page-wrapper" class="white-bg">
+  <div id="page-wrapper" class="gray-bg">
     <ra-header></ra-header>
-    <div class="wrapper wrapper-content">
-      <router-outlet></router-outlet>
+    <div class="fh-breadcrumb">
+      <div class="full-height">
+        <div class="full-height-scroll white-bg border-left">
+          <div class="element-detail-box">
+            <div class="tab-content">
+              <div id="tab-1" class="tab-pane active">
+                <router-outlet></router-outlet>
+              </div>
+              <!-- <div id="tab-2" class="tab-pane ">
+                      
+              </div>
+  
+              <div id="tab-3" class="tab-pane">
+                    
+              </div>
+              <div id="tab-4" class="tab-pane">
+      
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <ra-footer></ra-footer>
   </div>
