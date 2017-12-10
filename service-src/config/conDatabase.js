@@ -1,12 +1,22 @@
-const mysql = require("mysql");
-const config = require("./database");
+const Sequelize = require("sequelize");
+const config = require("./config-info");
 
-//Connect to my sql
-var con = mysql.createConnection({
+const connect = new Sequelize(config.database, config.user, config.password, {
     host: config.host,
-    user: config.user,
-    password: config.password,
-    database: config.database
+    dialect: 'mysql',
+
+    pool: {
+        max: 5,
+        min: 1,
+        acquire: 30000,
+        idle: 10000
+    }
 });
 
-module.exports = con;
+connect.authenticate().then(() => {
+    console.log('Connect successfull.');
+}).catch(err => {
+    console.log('Unable to connect to the database: ' + err);
+});
+
+module.exports = connect;

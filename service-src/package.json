@@ -16,8 +16,9 @@
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
+    "mysql2": "^1.5.1",
     "passport": "*",
     "passport-jwt": "*",
-    "mysql": "*"
+    "sequelize": "*"
   }
 }
