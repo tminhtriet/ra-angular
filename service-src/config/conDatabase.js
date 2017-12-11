@@ -3,7 +3,7 @@ const config = require("./config-info");
 
 const connect = new Sequelize(config.database, config.user, config.password, {
     host: config.host,
-    dialect: 'mysql',
+    dialect: config.typeDatabase,
 
     pool: {
         max: 5,

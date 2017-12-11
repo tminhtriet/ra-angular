@@ -3,18 +3,23 @@ const Sequelize = require('sequelize');
 const bcry = require("bcryptjs");
 
 const airlineUser = connectDB.define('alUser', {
-    id:{
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    username:{
-        type: Sequelize.STRING
+    user_id:{
+        type: Sequelize.STRING,
+        primaryKey: true
     },
     password:{
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        primaryKey: true
+    },
+    airline_code:{
+        type: Sequelize.STRING,
+        primaryKey: true
     },
     name: {
+        type: Sequelize.STRING,
+        primaryKey: true
+    },
+    profile: {
         type: Sequelize.STRING
     }
 }, {
@@ -24,15 +29,9 @@ const airlineUser = connectDB.define('alUser', {
 
 module.exports = airlineUser;
 
-module.exports.findUserById = function(id, callback){
-    airlineUser.findById(id).then(function(user){
-        callback(null, user);
-    });
-}
-
 module.exports.findUserByName = function(us, callback){
     airlineUser.findAll({
-        where: {username: us}
+        where: {user_id: us}
     }).then(airlineUser => {
         const jsonrs = JSON.stringify(airlineUser);
 

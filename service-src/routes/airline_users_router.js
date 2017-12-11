@@ -26,9 +26,11 @@ router.post('/findUserByName', (req, res, next) => {
                         success: true,
                         token: "JWT: " + token,
                         user: {
-                            id: user.id,
-                            username: user.username,
-                            name: user.name
+                            username: user.user_id,
+                            name: user.name,
+                            airline_code: user.airline_code,
+                            name: user.name,
+                            profile: user.profile
                         }
                     });
                 } else {
@@ -49,9 +51,11 @@ router.post('/insert', (req, res, next) => {
             res.json({success: false, msg: "User exists"});
         } else {
             let newUser = new modelAirlineUser({
-                username: req.body.username,
+                user_id: req.body.username,
                 password: req.body.password,
-                name: req.body.name
+                airline_code: req.body.airline_code,
+                name: req.body.name,
+                profile: req.body.profile
             })
         
             modelAirlineUser.insert(newUser, (err, result) => {
