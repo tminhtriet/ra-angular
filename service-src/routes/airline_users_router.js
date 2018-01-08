@@ -12,7 +12,7 @@ router.post('/findUserByName', (req, res, next) => {
         if(err != null){
             res.json({success: false, msg: "Server error: " + err});
         } else if(rs == null){
-            res.json({success: false, msg: "User not found: " + err});
+            res.json({success: false, msg: "User not found"});
         } else{
             // res.json(rs);
             var user = rs[0].dataValues;

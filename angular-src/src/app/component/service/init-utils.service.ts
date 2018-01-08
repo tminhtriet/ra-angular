@@ -1,13 +1,18 @@
 import { Injectable, ElementRef } from '@angular/core';
+import {Router, CanActivate} from '@angular/router';
+import { LoginService } from '../login/service/login.service';
 
 declare var jQuery: any;
 
 @Injectable()
-export class InitUtilsService {
+export class InitUtilsService implements CanActivate {
 
   _elmRef: ElementRef;
 
-  constructor() { }
+  constructor(
+    private _loginService: LoginService,
+    private _router: Router
+  ) { }
 
   create_calendar_month(){
     jQuery(this._elmRef.nativeElement).
@@ -40,4 +45,15 @@ export class InitUtilsService {
   public setElmRef(_elmRef: ElementRef){
     this._elmRef = _elmRef;
   }
+
+  canActivate(){
+    if(this._loginService.loggedIn()){
+        console.log("User login success");
+        return true;
+    } else {
+        console.log("User not login");
+        this._router.navigate(['/login']);
+        return false;
+    }
+}
 }

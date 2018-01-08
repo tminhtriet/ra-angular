@@ -8,8 +8,7 @@ const airlineUser = connectDB.define('alUser', {
         primaryKey: true
     },
     password:{
-        type: Sequelize.STRING,
-        primaryKey: true
+        type: Sequelize.STRING
     },
     airline_code:{
         type: Sequelize.STRING,
@@ -51,9 +50,9 @@ module.exports.insert = function(newUser, callback){
             if(err) throw err;
             newUser.password = hash;
             newUser.save().then(function(){
-                throw callback(null, "S");
+                callback(null, "S");
             }).catch(error => {
-                callback(error, "F");
+                callback(error, "F");   
             });
         });
     });
