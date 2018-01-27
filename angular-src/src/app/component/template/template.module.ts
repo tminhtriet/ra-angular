@@ -13,6 +13,7 @@ import { FooterComponent, MenuComponent, HeaderComponent } from '../shared/index
 import { DashboardComponent } from './body/dashboard/dashboard.component';
 import { DashboardChartComponent } from './body/dashboard-chart/dashboard-chart.component';
 import { ListSalesComponent } from './body/sales/list-sales/list-sales.component';
+import { DashboardChartService } from '../template/body/dashboard-chart/service/dashboard-chart.service';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { ListSalesComponent } from './body/sales/list-sales/list-sales.component
         ListSalesComponent
     ],
     providers: [
-        InitUtilsService
+        InitUtilsService,
+        DashboardChartService
     ],
     exports: [TemplateComponent, FooterComponent, MenuComponent, HeaderComponent]
 })

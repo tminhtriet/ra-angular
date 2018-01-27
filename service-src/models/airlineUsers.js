@@ -59,8 +59,13 @@ module.exports.insert = function(newUser, callback){
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){
-    bcry.compare(candidatePassword, hash, (err, isMatch) => {
-        if(err) throw callback(err, false);
-        callback(null, isMatch);
-    })
+    // bcry.compare(candidatePassword, hash, (err, isMatch) => {
+    //     if(err) throw callback(err, false);
+    //     callback(null, isMatch);
+    // });
+    if(candidatePassword == hash.trim()){
+        callback(null, true);
+    } else {
+        callback(null, false);
+    }
 }

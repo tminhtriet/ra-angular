@@ -23,18 +23,11 @@
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		<div>
-			<div>
-			  <canvas baseChart
-					  [datasets]="barChartData"
-					  [labels]="barChartLabels"
-					  [options]="barChartOptions"
-					  [legend]="barChartLegend"
-					  [chartType]="barChartType"
-					  (chartHover)="chartHovered($event)"
-					  (chartClick)="chartClicked($event)"></canvas>
-			</div>
-			<button (click)="randomize()">Update</button>
-		  </div>
+		<canvas baseChart
+			[datasets]="barChartData"
+			[labels]="barChartLabels"
+			[options]="barChartOptions"
+			[legend]="barChartLegend"
+			[chartType]="barChartType"></canvas>
 	</div>
 </div>

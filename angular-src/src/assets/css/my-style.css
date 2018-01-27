@@ -2,16 +2,9 @@ body {
 	/* font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 	font-family: "Maven Pro", sans-serif;
 	background-color: #225487;
-	font-size: 13px;
+	font-size: 11px;
 	/* color: #333; */
 	overflow-x: hidden;
-}
-
-DIV, TD, TH
-{
-	/* font-family:Arial, Helvetica, sans-serif; */
-	font-size:11px;
-	vertical-align:middle
 }
 
 @media (max-width:1400px) {
@@ -267,7 +260,7 @@ table thead tr th.myTableHeader {
 
 .rs-table{
 	height: 35px; 
-	padding-top: 10px;"
+	padding-top: 10px;
 }
 
 ul li.active a.mycustom {
@@ -390,6 +383,10 @@ fieldset[disabled] .btn-success.active {
 	#xs-row-full-right-to-center{
 		text-align: center;
 	}
+
+	.navbar-top-links .dropdown-alerts{
+		margin-left: -90px;
+	}
 }
 
 @media (max-width: 1366px){
@@ -469,6 +466,11 @@ fieldset[disabled] .btn-success.active {
 		position: relative;
 		margin-left: -23px;
 		margin-top: -10px;
+		font-size: 16px;
+	}
+	
+	.center-orientation .vertical-timeline-content .vertical-date{
+		top: 17px;
 		font-size: 16px;
 	}
 }

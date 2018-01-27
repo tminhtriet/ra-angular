@@ -7,6 +7,7 @@ const passport = require("passport");
 const app = express();
 
 const airlineUsers = require('./routes/airline_users_router');
+const dashboardChart = require('./routes/dashboard_chart');
 
 const port = 4000;
 
@@ -20,6 +21,7 @@ app.use(passport.session());
 require("./config/passport")(passport);
 
 app.use("/airlineUser", airlineUsers);
+app.use("/dashboardChart", dashboardChart);
 
 app.get('/', (req, res) => {
     res.send('Invalid Endpoind');
