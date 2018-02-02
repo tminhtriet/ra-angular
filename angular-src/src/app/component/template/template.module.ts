@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 
 import { InitUtilsService } from '../service/init-utils.service';
@@ -35,7 +35,8 @@ import { DashboardChartService } from '../template/body/dashboard-chart/service/
     ],
     providers: [
         InitUtilsService,
-        DashboardChartService
+        DashboardChartService,
+        DatePipe
     ],
     exports: [TemplateComponent, FooterComponent, MenuComponent, HeaderComponent]
 })
