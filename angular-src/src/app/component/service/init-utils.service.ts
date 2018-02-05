@@ -55,5 +55,9 @@ export class InitUtilsService implements CanActivate {
         this._router.navigate(['/login']);
         return false;
     }
-}
+  }
+
+  getUserLogin(){
+    return this._loginService.user;
+  }
 }
